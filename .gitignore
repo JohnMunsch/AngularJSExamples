@@ -3,4 +3,3 @@ dist
 .idea
 .tmp
 .sass-cache
-app/components
