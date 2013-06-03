@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('bluemoonApp', [])
+angular.module('svgExamplesApp', [])
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
