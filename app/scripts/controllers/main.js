@@ -21,5 +21,13 @@ angular.module("examplesApp")
 
 angular.module("examplesApp")
   .controller("FormCtrl", function ($scope) {
-
-  });
+      $scope.checkbox = true;
+      $scope.radioGroup1 = 1;
+      $scope.text = "sample text";
+      $scope.textarea = "sample text for textarea";
+      $scope.select = 1;
+      $scope.selectOptions = [
+        { name: "first", value: 1 },
+        { name: "second", value: 2 }
+      ];
+    });

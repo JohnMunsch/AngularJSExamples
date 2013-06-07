@@ -1,0 +1,21 @@
+<form>
+  <label>Checkbox<input type="checkbox" ng-model="checkbox"></label>
+
+  <label>Radio 1<input type="radio" name="radioGroup1" value="1" ng-model="radioGroup1"></label>
+  <label>Radio 2<input type="radio" name="radioGroup1" value="2" ng-model="radioGroup1"></label>
+
+  <label>Text<input type="text" ng-model="text"></label>
+
+  <label>Text Area<textarea ng-model="textarea"></textarea></label>
+
+  <label>Select<select ng-model="select" ng-options="option.value as option.name for option in selectOptions"></select></label>
+
+  <button>OK</button>
+  <button>Cancel</button>
+</form>
+
+{{checkbox}}
+{{radioGroup1}}
+{{text}}
+{{textarea}}
+{{select}}
