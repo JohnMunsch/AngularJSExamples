@@ -12,6 +12,6 @@ angular.module("examplesApp", [])
         controller: "FormCtrl"
       })
       .otherwise({
-        redirectTo: "/forms"
+        redirectTo: "/svg"
       });
   });
