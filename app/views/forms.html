@@ -71,8 +71,8 @@
 </div>
 
 <h3>Example 5: Use the same model copying technique we used in example 4 but add validation. Note the use of
-  ng-required to mark inputs which must be entered, ng-pattern to provide a regular expression for the zip code, the
-  conditional appearance of the Ruby on Rails checkbox, and a validation test on the OK button.</h3>
+  ng-required to mark inputs which must be entered, ng-pattern to provide a regular expression for the zip code,
+  and a validation test on the OK button.</h3>
 
 <div>
   <form name="userInputForm">
@@ -92,18 +92,6 @@
                           ng-options="state.abbreviation as state.name for state in form3.stateList"></select></label>
       <label>Zip<input type="text" ng-required="true" ng-pattern="/^\d{5}(-\d{4})?$/" ng-model="form3.zip"></label>
     </div>
-    <div>
-      Preferred language
-      <label>C/C++<input type="radio" name="preferredLanguage" value="C/C++" ng-model="form3.preferredLanguage"></label>
-      <label>Java<input type="radio" name="preferredLanguage" value="Java" ng-model="form3.preferredLanguage"></label>
-      <label>JavaScript<input type="radio" name="preferredLanguage" value="JavaScript" ng-model="form3.preferredLanguage"></label>
-      <label>Perl<input type="radio" name="preferredLanguage" value="Perl" ng-model="form3.preferredLanguage"></label>
-      <label>Ruby<input type="radio" name="preferredLanguage" value="Ruby" ng-model="form3.preferredLanguage"></label>
-      <label>Scala<input type="radio" name="preferredLanguage" value="Scala" ng-model="form3.preferredLanguage"></label>
-    </div>
-    <div ng-show="form3.preferredLanguage == 'Ruby'">
-      <label>Ruby w/ Rails<input type="checkbox" ng-model="rails"></label>
-    </div>
     <button ng-disabled="userInputForm.$invalid" ng-click="form3OK()">OK</button>
     <button ng-click="form3Reset()">Reset</button>
   </form>
@@ -118,6 +106,4 @@
   <div>{{userInfo.city}}</div>
   <div>{{userInfo.state}}</div>
   <div>{{userInfo.zip}}</div>
-  <div>{{userInfo.preferredLanguage}}</div>
-  <div>{{userInfo.rails}}</div>
 </div>

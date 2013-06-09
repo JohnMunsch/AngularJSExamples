@@ -61,15 +61,13 @@ angular.module("examplesApp")
 
       // form3
       $scope.userInfo = {
-        "firstName": "",
-        "lastName": "",
-        "addressLine1": "",
-        "addressLine2": "",
-        "city": "",
-        "state": "",
-        "zip": "",
-        "preferredLanguage": "",
-        "rails": false,
+        "firstName": "Barack",
+        "lastName": "Obama",
+        "addressLine1": "The White House",
+        "addressLine2": "1600 Pennsylvania Avenue NW",
+        "city": "Washington",
+        "state": "DC",
+        "zip": "20500",
         "stateList": [
           { name: 'ALABAMA', abbreviation: 'AL'},
           { name: 'ALASKA', abbreviation: 'AK'},
