@@ -1,13 +1,17 @@
-'use strict';
+"use strict";
 
-angular.module('svgExamplesApp', [])
+angular.module("examplesApp", [])
   .config(function ($routeProvider) {
     $routeProvider
-      .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
+      .when("/svg", {
+        templateUrl: "views/svg.html",
+        controller: "SVGCtrl"
+      })
+      .when("/forms", {
+        templateUrl: "views/forms.html",
+        controller: "FormCtrl"
       })
       .otherwise({
-        redirectTo: '/'
+        redirectTo: "/svg"
       });
   });
