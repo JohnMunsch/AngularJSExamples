@@ -11,6 +11,14 @@ angular.module("examplesApp", [])
         templateUrl: "views/forms.html",
         controller: "FormCtrl"
       })
+      .when("/formsStyled", {
+        templateUrl: "views/formsStyled.html",
+        controller: "FormCtrl"
+      })
+      .when("/formsBootstrapStyled", {
+        templateUrl: "views/formsBootstrapStyled.html",
+        controller: "FormCtrl"
+      })
       .otherwise({
         redirectTo: "/svg"
       });
