@@ -1,0 +1,53 @@
+<h3>Example 6: This one is just like the previous example except that we've specified a stylesheet for the page so that
+  the ng-valid, ng-invalid, ng-dirty, and ng-pristine classes which AngularJS automatically puts on form controls will
+  actually style the controls and give the user feedback.</h3>
+
+<p>In addition to ng-valid, ng-invalid, ng-dirty, and ng-pristine which are all put on the controls as they are changed,
+the same classes are also put on the form element as well. So you can style your form as a whole to show that one or
+more controls are not valid or the user has made a change to some data, etc. On top of that, there are also additional
+ng-valid-pattern, ng-invalid-pattern, ng-valid-required, and ng-invalid-required styles as well that appear and
+disappear based upon the specific data requirements of the fields. So you can do <strong>a lot</strong> of styling
+just using the provided styles.</p>
+
+<style>
+  .css-form.ng-valid div.warning {
+    display: none;
+  }
+  .css-form.ng-invalid div.warning {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  .css-form input.ng-invalid.ng-dirty {
+    background-color: red;
+  }
+
+  .css-form input.ng-valid.ng-dirty {
+    background-color: greenyellow;
+  }
+</style>
+
+<div>
+  <form novalidate class="css-form" name="userInputForm">
+    <div class="warning">This warning only appears if the form is invalid because one or more controls within the form
+    are invalid.</div>
+    <div>
+      <label>First Name<input type="text" ng-required="true" ng-model="form3.firstName"></label>
+      <label>Last Name<input type="text" ng-required="true" ng-model="form3.lastName"></label>
+    </div>
+    <div>
+      <label>Address Line 1<input type="text" ng-required="true" ng-model="form3.addressLine1"></label>
+    </div>
+    <div>
+      <label>Address Line 2<input type="text" ng-model="form3.addressLine2"></label>
+    </div>
+    <div>
+      <label>City<input type="text" ng-required="true" ng-model="form3.city"></label>
+      <label>State<select ng-model="form3.state" ng-required="true"
+                          ng-options="state.abbreviation as state.name for state in form3.stateList"></select></label>
+      <label>Zip<input type="text" ng-required="true" ng-pattern="/^\d{5}(-\d{4})?$/" ng-model="form3.zip"></label>
+    </div>
+    <button ng-disabled="userInputForm.$invalid" ng-click="form3OK()">OK</button>
+    <button ng-click="form3Reset()">Reset</button>
+  </form>
+</div>
