@@ -1,14 +1,3 @@
-<h3>Example 6: This one is just like the previous example except that we've specified a stylesheet for the page so that
-  the ng-valid, ng-invalid, ng-dirty, and ng-pristine classes which AngularJS automatically puts on form controls will
-  actually style the controls and give the user feedback.</h3>
-
-<p>In addition to ng-valid, ng-invalid, ng-dirty, and ng-pristine which are all put on the controls as they are changed,
-the same classes are also put on the form element as well. So you can style your form as a whole to show that one or
-more controls are not valid or the user has made a change to some data, etc. On top of that, there are also additional
-ng-valid-pattern, ng-invalid-pattern, ng-valid-required, and ng-invalid-required styles as well that appear and
-disappear based upon the specific data requirements of the fields. So you can do <strong>a lot</strong> of styling
-just using the provided styles.</p>
-
 <style>
   .css-form.ng-valid div.warning {
     display: none;
@@ -27,27 +16,77 @@ just using the provided styles.</p>
   }
 </style>
 
+<p><strong>Example 6:</strong> This one is just like the previous example except that we've specified a stylesheet for
+the page so that the ng-valid, ng-invalid, ng-dirty, and ng-pristine classes which AngularJS automatically puts on
+form controls will actually style the controls and give the user feedback.</p>
+
+<p>In addition to ng-valid, ng-invalid, ng-dirty, and ng-pristine which are all put on the controls as they are changed,
+the same classes are also put on the form element as well. So you can style your form as a whole to show that one or
+more controls are not valid or the user has made a change to some data, etc. On top of that, there are also additional
+ng-valid-pattern, ng-invalid-pattern, ng-valid-required, and ng-invalid-required styles as well that appear and
+disappear based upon the specific data requirements of the fields. So you can do <strong>a lot</strong> of styling
+just using the provided styles.</p>
+
 <div>
   <form novalidate class="css-form" name="userInputForm">
-    <div class="warning">This warning only appears if the form is invalid because one or more controls within the form
-    are invalid.</div>
-    <div>
-      <label>First Name<input type="text" ng-required="true" ng-model="form3.firstName"></label>
-      <label>Last Name<input type="text" ng-required="true" ng-model="form3.lastName"></label>
-    </div>
-    <div>
-      <label>Address Line 1<input type="text" ng-required="true" ng-model="form3.addressLine1"></label>
-    </div>
-    <div>
-      <label>Address Line 2<input type="text" ng-model="form3.addressLine2"></label>
-    </div>
-    <div>
-      <label>City<input type="text" ng-required="true" ng-model="form3.city"></label>
-      <label>State<select ng-model="form3.state" ng-required="true"
-                          ng-options="state.abbreviation as state.name for state in form3.stateList"></select></label>
-      <label>Zip<input type="text" ng-required="true" ng-pattern="/^\d{5}(-\d{4})?$/" ng-model="form3.zip"></label>
-    </div>
+    <div class="warning">This warning only appears because the form now has the ng-invalid class.</div>
+    <table>
+      <tr>
+        <td>
+          <label>First Name</label><input type="text" ng-required="true" ng-model="form3.firstName">
+        </td>
+        <td colspan="2">
+          <label>Last Name</label><input type="text" ng-required="true" ng-model="form3.lastName">
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3">
+          <label>Address Line 1</label><input type="text" class="input-xxlarge" ng-required="true" ng-model="form3.addressLine1">
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3">
+          <label>Address Line 2</label><input type="text" class="input-xxlarge" ng-model="form3.addressLine2">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label>City</label><input type="text" ng-required="true" ng-model="form3.city">
+        </td>
+        <td>
+          <label>State</label><select ng-model="form3.state" ng-required="true"
+                                      ng-options="state.abbreviation as state.name for state in form3.stateList"></select>
+        </td>
+        <td>
+          <label>Zip</label><input type="text" ng-required="true" ng-pattern="/^\d{5}(-\d{4})?$/" ng-model="form3.zip">
+        </td>
+      </tr>
+    </table>
     <button ng-disabled="userInputForm.$invalid" ng-click="form3OK()">OK</button>
     <button ng-click="form3Reset()">Reset</button>
   </form>
 </div>
+
+<br>
+<br>
+
+<p><strong>Example 7:</strong> I didn't bother putting together a full form for this one, just a single field to
+demonstrate Bootstrap's styling for control groups. It applies the error class to the control group whenever the
+$invalid flag for a particular field is set. Note: For this to work, you must have added a name to the form
+and a name to the control as well. With both in place AngularJS will create a structure in the $scope with flags
+which can be tested to enable and disable buttons or even change the validation of other controls (for example, if
+one control is only required if certain checkbox is selected). The flags associated with a form give you the next
+level of sophistication to your validation beyond what can be done with the AngularJS CSS classes alone.</p>
+
+<p>Note: Bootstrap has error, warning, info, and success styles which may be applied to control groups so you're not
+just limited to error.</p>
+
+<form name="sampleForm">
+  <div class="control-group" ng-class="{ error: sampleForm.sampleInput.$invalid }">
+    <label class="control-label" for="inputError">Input with error</label>
+    <div class="controls">
+      <input type="text" name="sampleInput" id="inputError" ng-required="true" ng-model="sampleInput">
+      <span ng-show="sampleForm.sampleInput.$invalid">Something may have gone wrong</span>
+    </div>
+  </div>
+</form>

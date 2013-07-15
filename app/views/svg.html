@@ -1,13 +1,14 @@
 <div class="ng-cloak">
   <div>
-    <h3>Example 1: Text updated on the fly in an SVG graphic via AngularJS.</h3>
+    <p><strong>Example 1:</strong> Text updated on the fly in an SVG graphic via AngularJS.</p>
     <span ng-include="'images/sunshine_plus_temp.svg'"></span>
   </div>
-  <label>Temperature</label> <input type="text" ng-model="temp"/>
+  <label>Temperature</label><input type="text" ng-model="temp"/>
 
   <div>
-    <h3>Example 2: Swapping out the image within an SVG. Note that the image actually appears in the middle of multiple
-    layers of drawing so it would take much more effort to achieve the same thing on the fly with other techniques.</h3>
+    <p><strong>Example 2:</strong> Swapping out the image within an SVG. Note that the image actually appears in the
+      middle of multiple layers of drawing so it would take much more effort to achieve the same thing on the fly with
+      other techniques.</p>
     <span ng-include="'images/slides.svg'"></span>
   </div>
   <button ng-click="switchImage()">Switch Image</button>

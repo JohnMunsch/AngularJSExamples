@@ -1,58 +1,79 @@
-<h3>Example 3: Original model values change as controls are changed.</h3>
+<p><strong>Example 3:</strong> Model values are updated immediately as the form controls are changed. You can see the
+corresponding model values beneath each control.</p>
 
 <div>
   <form>
-    <div>
-      <label>Checkbox<input type="checkbox" ng-model="checkbox"></label>
-    </div>
-    <div>
-      <label>Radio 1<input type="radio" name="radioGroup1" value="1" ng-model="radioGroup1"></label>
-      <label>Radio 2<input type="radio" name="radioGroup1" value="2" ng-model="radioGroup1"></label>
-    </div>
-    <div>
-      <label>Text<input type="text" ng-model="text"></label>
-    </div>
-    <div>
-      <label>Text Area<textarea ng-model="textarea"></textarea></label>
-    </div>
-    <div>
-      <label>Select<select ng-model="select" ng-options="option.value as option.name for option in selectOptions"></select></label>
-    </div>
+    <table style="width: 100%;">
+      <tr>
+        <td>
+          <label class="checkbox"><input type="checkbox" ng-model="checkbox">Checkbox</label>
+          <div><strong>Model Value:</strong> {{checkbox}}</div>
+        </td>
+        <td>
+          <label class="radio"><input type="radio" name="radioGroup1" value="1" ng-model="radioGroup1">Radio 1</label>
+          <label class="radio"><input type="radio" name="radioGroup1" value="2" ng-model="radioGroup1">Radio 2</label>
+          <div><strong>Model Value:</strong> {{radioGroup1}}</div>
+        </td>
+        <td>
+          <label>Text</label><input type="text" ng-model="text">
+          <div><strong>Model Value:</strong> {{text}}</div>
+        </td>
+        <td>
+          <label>Text Area</label><textarea ng-model="textarea"></textarea>
+          <div><strong>Model Value:</strong> {{textarea}}</div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label>Select</label><select ng-model="select" ng-options="option.value as option.name for option in selectOptions"></select>
+          <div><strong>Model Value:</strong> {{select}}</div>
+        </td>
+      </tr>
+    </table>
   </form>
 </div>
 
 <br/>
 <br/>
 
-<p><strong>Model</strong></p>
-<div>
-  <div>{{checkbox}}</div>
-  <div>{{radioGroup1}}</div>
-  <div>{{text}}</div>
-  <div>{{textarea}}</div>
-  <div>{{select}}</div>
-</div>
+<p><strong>Example 4:</strong> The original model values don't change until "OK" is clicked because we keep two objects
+in our $scope; one is the master object and the other is a copy we make just for the controls in this form. Clicking
+"OK" will copy values from the form object to the real object and clicking "Reset" re-copies from the real object to
+the form object again, reverting the form back to its original values.</p>
 
-<h3>Example 4: The original model values don't change until "OK" is clicked. Also, by clicking "Reset", the form can
-  revert to the original values easily.</h3>
+<p>This pattern is very useful if you use jQuery UI Dialogs or Bootstrap Modals or something similar to present popup
+dialog type input forms. The convention is that those can usually be canceled by the user without having to commit
+his/her changes.</p>
+
 <div>
   <form>
-    <div>
-      <label>Checkbox<input type="checkbox" ng-model="form2.checkbox"></label>
-    </div>
-    <div>
-      <label>Radio 1<input type="radio" name="radioGroup1" value="1" ng-model="form2.radioGroup1"></label>
-      <label>Radio 2<input type="radio" name="radioGroup1" value="2" ng-model="form2.radioGroup1"></label>
-    </div>
-    <div>
-      <label>Text<input type="text" ng-model="form2.text"></label>
-    </div>
-    <div>
-      <label>Text Area<textarea ng-model="form2.textarea"></textarea></label>
-    </div>
-    <div>
-      <label>Select<select ng-model="form2.select" ng-options="option.value as option.name for option in selectOptions"></select></label>
-    </div>
+    <table style="width: 100%;">
+      <tr>
+        <td>
+          <label class="checkbox"><input type="checkbox" ng-model="form2.checkbox">Checkbox</label>
+          <div><strong>Model Value:</strong> {{obj.checkbox}}</div>
+        </td>
+        <td>
+          <label class="radio"><input type="radio" name="radioGroup1" value="1" ng-model="form2.radioGroup1">Radio 1</label>
+          <label class="radio"><input type="radio" name="radioGroup1" value="2" ng-model="form2.radioGroup1">Radio 2</label>
+          <div><strong>Model Value:</strong> {{obj.radioGroup1}}</div>
+        </td>
+        <td>
+          <label>Text</label><input type="text" ng-model="form2.text">
+          <div><strong>Model Value:</strong> {{obj.text}}</div>
+        </td>
+        <td>
+          <label>Text Area</label><textarea ng-model="form2.textarea"></textarea>
+          <div><strong>Model Value:</strong> {{obj.textarea}}</div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label>Select</label><select ng-model="form2.select" ng-options="option.value as option.name for option in selectOptions"></select>
+          <div><strong>Model Value:</strong> {{obj.select}}</div>
+        </td>
+      </tr>
+    </table>
     <button ng-click="form2OK()">OK</button>
     <button ng-click="form2Reset()">Reset</button>
   </form>
@@ -61,49 +82,55 @@
 <br/>
 <br/>
 
-<p><strong>Model</strong></p>
-<div>
-  <div>{{obj.checkbox}}</div>
-  <div>{{obj.radioGroup1}}</div>
-  <div>{{obj.text}}</div>
-  <div>{{obj.textarea}}</div>
-  <div>{{obj.select}}</div>
-</div>
-
-<h3>Example 5: Use the same model copying technique we used in example 4 but add validation. Note the use of
-  ng-required to mark inputs which must be entered, ng-pattern to provide a regular expression for the zip code,
-  and a validation test on the OK button.</h3>
+<p><strong>Example 5:</strong> Use the same model copying technique we used in example 4 but add validation. Note the
+use of ng-required to mark inputs which must be entered, ng-pattern to provide a regular expression for the zip code,
+and a validation test on the OK button.</p>
 
 <div>
   <form name="userInputForm">
-    <div>
-      <label>First Name<input type="text" ng-required="true" ng-model="form3.firstName"></label>
-      <label>Last Name<input type="text" ng-required="true" ng-model="form3.lastName"></label>
-    </div>
-    <div>
-      <label>Address Line 1<input type="text" ng-required="true" ng-model="form3.addressLine1"></label>
-    </div>
-    <div>
-      <label>Address Line 2<input type="text" ng-model="form3.addressLine2"></label>
-    </div>
-    <div>
-      <label>City<input type="text" ng-required="true" ng-model="form3.city"></label>
-      <label>State<select ng-model="form3.state" ng-required="true"
-                          ng-options="state.abbreviation as state.name for state in form3.stateList"></select></label>
-      <label>Zip<input type="text" ng-required="true" ng-pattern="/^\d{5}(-\d{4})?$/" ng-model="form3.zip"></label>
-    </div>
+    <table>
+      <tr>
+        <td>
+          <label>First Name</label><input type="text" name="firstName" ng-required="true" ng-model="form3.firstName">
+        </td>
+        <td>
+          <label>Last Name</label><input type="text" name="lastName" ng-required="true" ng-model="form3.lastName">
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3">
+          <label>Address Line 1</label><input type="text" class="input-xxlarge" ng-required="true" ng-model="form3.addressLine1">
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3">
+          <label>Address Line 2</label><input type="text" class="input-xxlarge" ng-model="form3.addressLine2">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label>City</label><input type="text" ng-required="true" ng-model="form3.city">
+        </td>
+        <td>
+          <label>State</label><select ng-model="form3.state" ng-required="true"
+                                      ng-options="state.abbreviation as state.name for state in form3.stateList"></select>
+        </td>
+        <td>
+          <label>Zip</label><input type="text" ng-required="true" ng-pattern="/^\d{5}(-\d{4})?$/" ng-model="form3.zip">
+        </td>
+      </tr>
+    </table>
     <button ng-disabled="userInputForm.$invalid" ng-click="form3OK()">OK</button>
     <button ng-click="form3Reset()">Reset</button>
   </form>
 </div>
 
-<p><strong>Model</strong></p>
+<p><strong>Model Values</strong></p>
 <div>
-  <div>{{userInfo.firstName}}</div>
-  <div>{{userInfo.lastName}}</div>
-  <div>{{userInfo.addressLine1}}</div>
-  <div>{{userInfo.addressLine2}}</div>
-  <div>{{userInfo.city}}</div>
-  <div>{{userInfo.state}}</div>
-  <div>{{userInfo.zip}}</div>
+  <p>
+    {{userInfo.firstName}} {{userInfo.lastName}}<br>
+    {{userInfo.addressLine1}}<br>
+    {{userInfo.addressLine2}}<br>
+    {{userInfo.city}}, {{userInfo.state}}  {{userInfo.zip}}
+  </p>
 </div>
