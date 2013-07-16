@@ -1,9 +1,29 @@
 <div>
-  <p><strong>Example 8:</strong> .</p>
+  <p><strong>Example 8:</strong> This is a straightforward example where we're just calling a service (Openkeyval in
+  this case) to store a value and then retrieve it. We assign the promise we get back from the retrieval directly to
+  a variable in the scope and also attach a function to log the returned information (showing that a promise may
+  be used many times).</p>
 
-  <p>{{ firstResult }}</p>
+  Retrieved Value: <p>{{ firstResult | json }}</p>
 </div>
 
+<br>
+<br>
+
 <div>
-  <p><strong>Example 9:</strong> .</p>
+  <p><strong>Example 9:</strong> For this example, we store two separate sentences into the keystore purely to setup for
+  a demonstration of uniting multiple promises together into a single promise. We demonstrate that by making separate
+  requests for each of the two stored values, then using $q.all() to create a single promise out of both. Then we
+  use .then() to modify the returned data and assign the promise which comes back from .then() to a $scope variable.</p>
+
+  Complete Quote: <p>"{{ completeQuote }}"</p>
+</div>
+
+<br>
+<br>
+
+<div>
+  <p><strong>Example 10:</strong> .</p>
+
+
 </div>
