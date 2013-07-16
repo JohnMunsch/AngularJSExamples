@@ -1,5 +1,5 @@
 <div>
-  <p><strong>Example 8:</strong> This is a straightforward example where we're just calling a service (Openkeyval in
+  <p><strong>Example 1:</strong> This is a straightforward example where we're just calling a service (Openkeyval in
   this case) to store a value and then retrieve it. We assign the promise we get back from the retrieval directly to
   a variable in the scope and also attach a function to log the returned information (showing that a promise may
   be used many times).</p>
@@ -11,7 +11,7 @@
 <br>
 
 <div>
-  <p><strong>Example 9:</strong> For this example, we store two separate sentences into the keystore purely to setup for
+  <p><strong>Example 2:</strong> For this example, we store two separate sentences into the keystore purely to setup for
   a demonstration of uniting multiple promises together into a single promise. We demonstrate that by making separate
   requests for each of the two stored values, then using $q.all() to create a single promise out of both. Then we
   use .then() to modify the returned data and assign the promise which comes back from .then() to a $scope variable.</p>
@@ -23,7 +23,7 @@
 <br>
 
 <div>
-  <p><strong>Example 10:</strong> $http is capable of caching the results of individual requests if you set a flag, but
+  <p><strong>Example 3:</strong> $http is capable of caching the results of individual requests if you set a flag, but
   in many cases that's not appropriate. What if the value is changing periodically? What if it's changing because of
   the user's own actions? That's what this example demonstrates. As you add/change each value then the local cache is
   updated at the same time. Then requests for those values will be served out of the local cache when possible instead
