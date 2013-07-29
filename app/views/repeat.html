@@ -1,0 +1,20 @@
+<style>
+  .record { margin-bottom: 15px; }
+  .name { display: block; }
+  .address { display: block; }
+  .cityStateZip { display: block; }
+</style>
+
+<div class="record" ng-repeat="record in records">
+  <span class="name">{{ record.lastName }}, {{ record.firstName }}</span>
+  <span class="address">{{ record.address }}</span>
+  <span class="cityStateZip">{{ record.city }}, {{ record.state }}  {{ record.zip }}</span>
+</div>
+
+<form>
+  <div class="record" ng-repeat="record in records">
+    <input type="text" ng-model="record.firstName"><input type="text" ng-model="record.lastName">
+    <input type="text" ng-model="record.address">
+    <input type="text" ng-model="record.city"><input type="text" ng-model="record.state"><input type="text" ng-model="record.zip">
+  </div>
+</form>

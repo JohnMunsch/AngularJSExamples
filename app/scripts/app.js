@@ -19,6 +19,10 @@ angular.module("examplesApp", [])
         templateUrl: "views/promises.html",
         controller: "PromisesCtrl"
       })
+      .when("/repeat", {
+        templateUrl: "views/repeat.html",
+        controller: "RepeatCtrl"
+      })
       .otherwise({
         redirectTo: "/svg"
       });
