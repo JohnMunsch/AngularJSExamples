@@ -1,6 +1,6 @@
 "use strict";
 
-angular.module("examplesApp", [])
+angular.module("examplesApp", [ 'ngRoute' ])
   .config(function ($routeProvider) {
     $routeProvider
       .when("/svg", {
@@ -19,9 +19,9 @@ angular.module("examplesApp", [])
         templateUrl: "views/promises.html",
         controller: "PromisesCtrl"
       })
-      .when("/repeat", {
-        templateUrl: "views/repeat.html",
-        controller: "RepeatCtrl"
+      .when("/allCheckbox", {
+        templateUrl: "views/allCheckbox.html",
+        controller: "AllCheckboxCtrl"
       })
       .otherwise({
         redirectTo: "/svg"

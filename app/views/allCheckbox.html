@@ -1,0 +1,8 @@
+<div ng-controller="AllCheckboxCtrl">
+  <input type="checkbox" ng-click="allNeedsClicked()" ng-checked="allNeedsMet()">All needs
+  <ul>
+    <div ng-repeat="need in needs">
+      <input type="checkbox" ng-model="need.done">{{ need.text }}
+    </div>
+  </ul>
+</div>
