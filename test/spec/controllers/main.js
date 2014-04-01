@@ -1,9 +1,8 @@
-'use strict';
-
 describe('Controller: MainCtrl', function () {
+  'use strict';
 
   // load the controller's module
-  beforeEach(module('bluemoonApp'));
+  beforeEach(module('examplesApp'));
 
   var MainCtrl,
     scope;
@@ -15,8 +14,4 @@ describe('Controller: MainCtrl', function () {
       $scope: scope
     });
   }));
-
-  it('should attach a list of awesomeThings to the scope', function () {
-    expect(scope.awesomeThings.length).toBe(3);
-  });
 });

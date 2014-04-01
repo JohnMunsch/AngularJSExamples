@@ -1,9 +1,8 @@
-'use strict';
-
 describe('Controller: RepeatCtrl', function () {
+  'use strict';
 
   // load the controller's module
-  beforeEach(module('AngularJSExamplesApp'));
+  beforeEach(module('examplesApp'));
 
   var RepeatCtrl,
     scope;
@@ -15,8 +14,4 @@ describe('Controller: RepeatCtrl', function () {
       $scope: scope
     });
   }));
-
-  it('should attach a list of awesomeThings to the scope', function () {
-    expect(scope.awesomeThings.length).toBe(3);
-  });
 });

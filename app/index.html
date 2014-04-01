@@ -1,58 +1,64 @@
-<!doctype html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>AngularJS Examples</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
-    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-    <!-- build:css styles/main.css -->
-    <link rel="stylesheet" href="components/bootstrap/dist/css/bootstrap.css">
-    <link rel="stylesheet" href="styles/main.css">
-    <!-- endbuild -->
-  </head>
-  <body ng-app="examplesApp">
-    <!--[if lt IE 7]>
-      <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
-    <![endif]-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="shortcut icon" href="../../assets/ico/favicon.ico">
 
-    <!--[if lt IE 9]>
-      <script src="components/es5-shim/es5-shim.js"></script>
-      <script src="components/json3/lib/json3.min.js"></script>
-    <![endif]-->
+  <title>Theme Template for Bootstrap</title>
 
-    <!-- Add your site or application content here -->
-    <p style="margin-left: 15px; margin-top: 15px; margin-bottom: 25px;">
-      <a href="#/svg">SVG Examples</a> | <a href="#/forms">Forms Examples</a> |
-      <a href="#/formsStyled">Bootstrap Styled Forms Examples</a> |
-      <a href="#/promises">Promises Examples</a> |
-      <a href="#/allCheckbox">"All" Checkbox Example</a>
-    </p>
-    <div class="container" ng-view></div>
+  <!-- Bootstrap core CSS -->
+  <link href="components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap theme -->
+  <link href="components/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet">
 
-    <script src="components/angular/angular.js"></script>
-    <script src="components/angular-route/angular-route.js"></script>
-    <script src="components/chance/chance.js"></script>
+  <!-- Custom styles for this template -->
+  <link rel="stylesheet" href="styles/main.css">
+</head>
 
-    <!-- build:js scripts/scripts.js -->
-    <script src="scripts/app.js"></script>
-    <script src="scripts/controllers/main.js"></script>
-    <script src="scripts/controllers/promises.js"></script>
-    <script src="scripts/controllers/allCheckbox.js"></script>
-    <script src="scripts/services/sampleService.js"></script>
-    <script src="scripts/services/sampleServiceWithCaching.js"></script>
-    <!-- endbuild -->
+<body role="document" ng-app="examplesApp">
+<!--[if lt IE 9]>
+<p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
+<![endif]-->
 
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-    <script>
-      var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
-      (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-      g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-      s.parentNode.insertBefore(g,s)}(document,'script'));
-    </script>
-  </body>
+<!-- Add your site or application content here -->
+<p style="margin-left: 15px; margin-top: 15px; margin-bottom: 25px;">
+  <a href="#/svg">SVG Examples</a> | <a href="#/forms">Forms Examples</a> |
+  <a href="#/formsStyled">Bootstrap Styled Forms Examples</a> |
+  <a href="#/promises">Promises Examples</a> |
+  <a href="#/allCheckbox">"All" Checkbox Example</a>
+</p>
+<div class="container" ng-view></div>
+
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+<script src="components/angular/angular.js"></script>
+<script src="components/angular-route/angular-route.js"></script>
+<script src="components/chance/chance.js"></script>
+
+<!-- build:js scripts/scripts.js -->
+<script src="scripts/app.js"></script>
+<script src="scripts/controllers/main.js"></script>
+<script src="scripts/controllers/promises.js"></script>
+<script src="scripts/controllers/allCheckbox.js"></script>
+<script src="scripts/services/sampleService.js"></script>
+<script src="scripts/services/sampleServiceWithCaching.js"></script>
+<!-- endbuild -->
+
+<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+<script>
+  var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+</body>
 </html>

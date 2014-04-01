@@ -3,7 +3,7 @@
 describe('Service: sampleService', function () {
 
   // load the service's module
-  beforeEach(module('AngularJSExamplesApp'));
+  beforeEach(module('examplesApp'));
 
   // instantiate service
   var sampleService;
@@ -14,5 +14,4 @@ describe('Service: sampleService', function () {
   it('should do something', function () {
     expect(!!sampleService).toBe(true);
   });
-
 });

@@ -1,7 +1,7 @@
-'use strict';
-
 angular.module('examplesApp').controller('AllCheckboxCtrl',
   function ($scope) {
+    'use strict';
+
     $scope.needs = [
       {text: 'Meet physiological needs', done: true},
       {text: 'Get safety', done: false},
